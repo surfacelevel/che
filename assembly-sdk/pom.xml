@@ -39,6 +39,12 @@
         </dependency>
         <dependency>
             <groupId>org.eclipse.che.sdk</groupId>
+            <artifactId>assembly-machine-server</artifactId>
+            <version>${project.version}</version>
+            <type>zip</type>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.che.sdk</groupId>
             <artifactId>assembly-sdk-war</artifactId>
             <version>${project.version}</version>
             <type>war</type>
@@ -103,26 +109,6 @@
                                 </artifactItem>
                             </artifactItems>
                             <outputDirectory>${project.build.directory}/dependency/tomcat</outputDirectory>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>copy-extensions-tomcat</id>
-                        <phase>prepare-package</phase>
-                        <goals>
-                            <goal>copy</goal>
-                        </goals>
-                        <configuration>
-                            <artifactItems>
-                                <artifactItem>
-                                    <groupId>org.eclipse.che.sdk</groupId>
-                                    <artifactId>assembly-machine-server</artifactId>
-                                    <version>${project.version}</version>
-                                    <type>zip</type>
-                                    <overWrite>false</overWrite>
-                                    <destFileName>ext-server.zip</destFileName>
-                                </artifactItem>
-                            </artifactItems>
-                            <outputDirectory>${project.build.directory}/dependency/ext-server</outputDirectory>
                         </configuration>
                     </execution>
                 </executions>
